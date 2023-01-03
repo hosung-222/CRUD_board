@@ -1,0 +1,22 @@
+{{>layouts/header}}
+
+<!-- 글 수정페이지-->
+
+{{#article}}
+<form class="container" action="/articles/update" method="post">
+    <input name="id" type="hidden" value="{{id}}" />
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+<!--        value를 이용해 수정할 내용 가져오기-->
+        <input type="text" class="form-control" name="title" value="{{title}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Contents</label>
+        <textarea class="form-control" rows="3" name="content" >{{content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/articles/{{id}}">back</a>
+</form>
+{{/article}}
+
+{{>layouts/footer}}
