@@ -7,11 +7,11 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-@AllArgsConstructor
-@NoArgsConstructor //default 생성자 추가
-@ToString
+@AllArgsConstructor //Class 모든 필드 값을 파라미터로 받는 생성자를 추가
+@NoArgsConstructor //Class 기본 생성자를 자동으로 추가해줍니다.
+@ToString // class 모든 필드에 toString method 생성
 @Entity // db가 해당 객체 인식( table 생성 )
-@Getter
+@Getter // class모든 필드에 Getter method 생성
 public class Article {
 
     @Id//구분위한 대표값 지정
@@ -26,5 +26,12 @@ public class Article {
     private String content;
 
 
-
+    public void patch(Article article) {
+        if (article.title != null){
+            this.title = article.title;
+        }
+        if (article.content != null){
+            this.content = article.content;
+        }
+    }
 }

@@ -18,13 +18,13 @@ import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Optional;
 
-@Controller
+@Controller // class가 Controller 역할 명시
 @Slf4j //로깅을 위한 어노테이션
 public class ArticleController {
     @Autowired //스프링부트가 미리 생성해놓은 객체를 자동으로 연결
     private ArticleRepository articleRepository;
 
-    @GetMapping("/articles/new")
+    @GetMapping("/articles/new") // 요청이 들어온 url의 요청과 일치하면 해당 클래스나 메소드 실행
     public  String newArticleForm(){
         return "articles/new";
     }
