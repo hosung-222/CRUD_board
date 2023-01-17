@@ -112,8 +112,8 @@ public class ArticleController {
 
         // db와 일할땐 항상 repository 이용
         // 1. 삭제 대상을 가져옴
-       Article target = articleRepository.findById(id).orElse(null);
-       log.info(target.toString());
+        Article target = articleRepository.findById(id).orElse(null);
+        log.info(target.toString());
 
         // 2. 대상을 삭제
         if (target != null){
